@@ -1,48 +1,69 @@
+
+// COS30008, Tutorial 2, 2022
+
 #include "Polygon.h"
+
 #include <stdexcept>
 
-Polygon::Polygon() : fNumberOfVertices(0)
-{
-}
+using namespace std;
+
+Polygon::Polygon() :
+    fNumberOfVertices(0)
+{}
 
 size_t Polygon::getNumberOfVertices() const
 {
-	return fNumberOfVertices;
+    return fNumberOfVertices;
 }
 
 const Vector2D& Polygon::getVertex(size_t aIndex) const
 {
-	if (aIndex < fNumberOfVertices)
-		return fVertices[aIndex];
-	throw std::out_of_range("Index is out of vertices bounds");
+    if (aIndex < fNumberOfVertices)
+    {
+        return fVertices[aIndex];
+    }
+
+    throw out_of_range("Illegal index value.");
 }
 
-void Polygon::readData(std::istream& aIStream)
+void Polygon::readData(istream& aIStream)
 {
-	while (aIStream >> fVertices[fNumberOfVertices])
-	{
-		fNumberOfVertices++;
-	}
+    // read input file containing 2D vector data
+    // if no data can be read, then exit loop
+    // lInput >> lVectors[lIndex] evaluates to false on EOF
+    while (aIStream >> fVertices[fNumberOfVertices])
+    {
+        fNumberOfVertices++;
+    }
 }
 
 float Polygon::getPerimeter() const
 {
-	float perimeter = 0.0f;
+    float Result = 0.0f;
 
-	for (int i = 0; i < fNumberOfVertices; i++)
-	{
-		Vector2D segment = fVertices[(i + 1) % fNumberOfVertices] - fVertices[i];
-		perimeter += segment.length();
-	}
-	return perimeter;
+    // There have to be at least three vertices
+    if (fNumberOfVertices > 2)
+    {
+        // solution without modulus and explicit temporary variables
+        for (size_t i = 1; i < fNumberOfVertices; i++)
+        {
+            Result += (fVertices[i] - fVertices[i - 1]).length();
+        }
+
+        Result += (fVertices[0] - fVertices[fNumberOfVertices - 1]).length();
+    }
+
+    return Result;
 }
 
 Polygon Polygon::scale(float aScalar) const
 {
-	Polygon result = *this;
+    Polygon Result = *this;
 
-	for (int i = 0; i < result.getNumberOfVertices(); i++)
-		result.fVertices[i] = this->fVertices[i] * aScalar;
+    for (size_t i = 0; i < fNumberOfVertices; i++)
+    {
+        Result.fVertices[i] = fVertices[i] * aScalar;
+    }
 
-	return result;
+    return Result;
 }
