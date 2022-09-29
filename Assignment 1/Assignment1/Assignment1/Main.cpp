@@ -62,7 +62,7 @@ void runProblem2()
     }
     cout << "Indefinite integral of A = "
         << A.getIndefiniteIntegral() << endl;
-    cout << "Derivativeof A = "
+    cout << "Derivative of A = "
         << A.getDerivative() << endl;
     cout << "Derivative of indefinite integral of A = "
         << A.getIndefiniteIntegral().getDerivative() << endl;
