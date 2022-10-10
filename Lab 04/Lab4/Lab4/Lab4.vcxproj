@@ -127,7 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Capacitor.cpp" />
+    <ClCompile Include="Inductor.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="PassiveResitor.cpp" />
+    <ClCompile Include="ResistorBase.cpp" />
+    <ClCompile Include="ResistorBaseScaling.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Capacitor.h" />
