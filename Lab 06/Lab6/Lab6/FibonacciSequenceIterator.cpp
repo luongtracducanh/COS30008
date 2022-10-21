@@ -1,12 +1,8 @@
 ﻿#include "FibonacciSequenceIterator.h"
 
-FibonacciSequenceIterator::FibonacciSequenceIterator(const FibonacciSequence& aSequenceObject, uint64_t aStart)
-	:fSequenceObject(aSequenceObject), fIndex((aStart))
-{}
+FibonacciSequenceIterator::FibonacciSequenceIterator(const FibonacciSequence& aSequenceObject, uint64_t aStart):fSequenceObject(aSequenceObject), fIndex((aStart)){}
 
-FibonacciSequenceIterator::FibonacciSequenceIterator(uint64_t aLimit, uint64_t aStart)
-	:fSequenceObject(aLimit), fIndex((aStart))
-{}
+FibonacciSequenceIterator::FibonacciSequenceIterator(uint64_t aLimit, uint64_t aStart):fSequenceObject(aLimit), fIndex((aStart)){}
 
 const uint64_t& FibonacciSequenceIterator::operator*() const
 {
@@ -26,7 +22,6 @@ FibonacciSequenceIterator FibonacciSequenceIterator::operator++(int)
 	++(*this);
 	return temp;
 }
-
 
 bool FibonacciSequenceIterator::operator==(const FibonacciSequenceIterator& aOther) const
 {

@@ -2,7 +2,7 @@
 #include "FibonacciSequenceIterator.h"
 #include <stdexcept>
 
-FibonacciSequence::FibonacciSequence(uint64_t aLimit) :fPrevious(0), fCurrent(1), fPosition(1), fLimit(aLimit){};
+FibonacciSequence::FibonacciSequence(uint64_t aLimit) :fPrevious(0), fCurrent(1), fPosition(1), fLimit(aLimit){}
 
 const uint64_t& FibonacciSequence::current() const
 {
@@ -25,7 +25,6 @@ const uint64_t& FibonacciSequence::getLimit() const
 {
 	return fLimit;
 }
-
 
 void FibonacciSequence::reset()
 {
