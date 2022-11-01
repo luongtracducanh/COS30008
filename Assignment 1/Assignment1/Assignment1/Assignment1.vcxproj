@@ -35,6 +35,10 @@
     <ClInclude Include="Polynomial.h" />
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Data.txt" />
+    <Text Include="Parallelogram.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

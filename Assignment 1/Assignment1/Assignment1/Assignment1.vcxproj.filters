@@ -57,4 +57,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Data.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Parallelogram.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>
