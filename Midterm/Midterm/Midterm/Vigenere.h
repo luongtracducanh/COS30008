@@ -23,7 +23,7 @@ public:
 	// This method has to initialize the keyword provider.
 	void reset();
 	// Encode a character using the current keyword character and update keyword. [36]
-	char encode(char character);
+	char encode(char aCharacter);
 	// Decode a character using the current keyword character and update keyword. [46]
-	char decode(char character);
+	char decode(char aCharacter);
 };

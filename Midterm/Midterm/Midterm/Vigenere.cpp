@@ -4,15 +4,12 @@ void Vigenere::initializeTable()
 {
 	for (char row = 0; row < CHARACTERS; row++)
 	{
-		char character = 'B' + row;
-
-		for (char col = 0; col < CHARACTERS; col++)
+		char lChar = 'B' + row;
+		for (char column = 0; column < CHARACTERS; column++)
 		{
-			if (character > 'Z')
-			{
-				character = 'A';
-			}
-			fMappingTable[row][col] = character++;
+			if (lChar > 'Z')
+				lChar = 'A';
+			fMappingTable[row][column] = lChar++;
 		}
 	}
 }
@@ -39,36 +36,36 @@ void Vigenere::reset()
 	fKeywordProvider.initialize(fKeyword);
 }
 
-char Vigenere::encode(char character)
+char Vigenere::encode(char aCharacter)
 {
-	if (isalpha(character))
+	if (isalpha(aCharacter))
 	{
-		bool isLower = std::islower(character);
-		char encoded = fMappingTable[*fKeywordProvider - 'A'][std::toupper(character) - 'A'];
+		bool isLower = std::islower(aCharacter);
+		char encoded = fMappingTable[*fKeywordProvider - 'A'][std::toupper(aCharacter) - 'A'];
 
-		fKeywordProvider << character;
+		fKeywordProvider << aCharacter;
 		if (isLower)
 		{
 			return static_cast<char>(std::tolower(encoded));
 		}
 		return encoded;
 	}
-	return character;
+	return aCharacter;
 }
 
-char Vigenere::decode(char character)
+char Vigenere::decode(char aCharacter)
 {
-	if (isalpha((character)))
+	if (isalpha((aCharacter)))
 	{
-		bool isLower = std::islower(character);
-		char encoded = static_cast<char>(toupper(character));
+		bool isLower = std::islower(aCharacter);
+		char encoded = static_cast<char>(toupper(aCharacter));
 		char decoded = 0;
 
-		for (char col = 0; col < CHARACTERS; col++)
+		for (char column = 0; column < CHARACTERS; column++)
 		{
-			if (fMappingTable[*fKeywordProvider - 'A'][col] == encoded)
+			if (fMappingTable[*fKeywordProvider - 'A'][column] == encoded)
 			{
-				decoded = static_cast<char>(col + 'A');
+				decoded = static_cast<char>(column + 'A');
 				break;
 			}
 		}
@@ -80,5 +77,5 @@ char Vigenere::decode(char character)
 		}
 		return decoded;
 	}
-	return character;
+	return aCharacter;
 }
