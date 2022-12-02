@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6d3b3e09-79c3-48d3-b5ab-915ad4f21e06}</ProjectGuid>
-    <RootNamespace>Assignment4</RootNamespace>
+    <ProjectGuid>{75a6a2d7-6c86-4567-90a9-610a17ad5f38}</ProjectGuid>
+    <RootNamespace>Final</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,12 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Main2022.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BinarySearchTree.h" />
-    <ClInclude Include="BinarySearchTreeIterator.h" />
-    <ClInclude Include="BinaryTreeNode.h" />
+    <ClInclude Include="TernaryTree.h" />
+    <ClInclude Include="TernaryTreePrefixIterator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

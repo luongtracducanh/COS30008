@@ -7,7 +7,7 @@
 
 #if TEST >= 7
 
-#include "Handle.h"
+#include "HandleImpl.h"
 
 #endif
 
