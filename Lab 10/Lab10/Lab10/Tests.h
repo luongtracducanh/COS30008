@@ -3,7 +3,7 @@
 #pragma once
 
 // enable default test
-#define TEST 0
+//#define TEST 0
 
 // enable copy contructor test
 //#define TEST 1
